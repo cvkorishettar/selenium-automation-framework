@@ -66,6 +66,7 @@ public class LoginTest extends BaseTest {
                         "Locked user message mismatch");
 
                 Assert.fail("User account is locked → stop execution");
+
                 break;
         }
     }
