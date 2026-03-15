@@ -1,0 +1,18 @@
+<suite name="TestSuite">
+
+    <test name="SmokeTest">
+
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <include name="smoke"/>-->
+<!--            </run>-->
+<!--        </groups>-->
+
+        <classes>
+            <class name="tests.LoginTest"/>
+<!--            <class name="tests.PaymentTest"/>-->
+        </classes>
+
+    </test>
+
+</suite>
