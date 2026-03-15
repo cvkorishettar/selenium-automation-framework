@@ -28,7 +28,7 @@ public class ActionsClass {
         js.executeScript("arguments[0].scrollIntoView(true);", visibleText);
         Actions action = new Actions(driver);
 
-    /**    WebElement point = driver.findElement(By.xpath("//button[text()='Point Me']"));
+       WebElement point = driver.findElement(By.xpath("//button[text()='Point Me']"));
         action.moveToElement(point).perform();
 //        Thread.sleep(3000);
 //  Double click
@@ -38,14 +38,14 @@ public class ActionsClass {
         driver.findElement(By.xpath("//button[contains(.,'Copy Text')]")).click();
         driver.findElement(By.id("field2")).sendKeys("Text coppied");
 // Drag and Drop
-       /** WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+       WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         WebElement dragElement = driver.findElement(By.id("draggable"));
 //        js.executeScript("arguments[0].scrollIntoView(true)",dragElement);
 //        wait.until(ExpectedConditions.visibilityOf(dragElement));
 
         WebElement dropPoint = driver.findElement(By.id("droppable"));
-        action.dragAndDrop(dragElement,dropPoint).perform();   **/
+        action.dragAndDrop(dragElement,dropPoint).perform();
 // Right click / context click
 
 //        WebElement ele = driver.findElement(By.id("droppable"));
