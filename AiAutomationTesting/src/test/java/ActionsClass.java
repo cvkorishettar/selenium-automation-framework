@@ -55,7 +55,7 @@ public class ActionsClass {
 //        action.contextClick(ele).perform();
 //        Thread.sleep(3000);
 //  Click And hold
-        WebElement clickAndHold = driver.findElement(By.id("draggable"));
+//        WebElement clickAndHold = driver.findElement(By.id("draggable"));
 //        action.clickAndHold(clickAndHold).perform();
 //  Click And hold & Drop to destiny
 //        WebElement HoldDrop = driver.findElement(By.id("droppable"));
@@ -70,8 +70,8 @@ public class ActionsClass {
 //        action.moveToElement(menu).perform();
 //        driver.findElement(By.xpath("//a[text()='Mobiles']")).click();
 // Keys action
-        driver.findElement(By.id("Wikipedia1_wikipedia-search-input")).sendKeys("Mobiles");
-        action.sendKeys(Keys.ENTER).perform();
+//        driver.findElement(By.id("Wikipedia1_wikipedia-search-input")).sendKeys("Mobiles");
+//        action.sendKeys(Keys.ENTER).perform();
 //        ArrayList<String> list = new ArrayList<>();
 
 //        List<WebElement> searchedElemets = driver.findElements(By.id("//div[@id='wikipedia-search-result-link']"));
@@ -80,9 +80,9 @@ public class ActionsClass {
 //            System.out.println(list.add(searchele.getText().trim()));
 //        }
 //        System.out.println(list);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement moreButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(.,'More »')]")));;
-        js.executeScript("window.scrollBy(0,300)");
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//        WebElement moreButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(.,'More »')]")));;
+//        js.executeScript("window.scrollBy(0,300)");
 //        moreButton.click();
 //        Thread.sleep(4000);
 //        String parentWindow = driver.getWindowHandle();
