@@ -55,13 +55,15 @@ public class LoginTest extends BaseTest {
                 break;
 
             case LOCKED_USER:
-                String actual =
-                        lg.getErrorMessage();
-                System.out.println(actual);
+//                String actual =
+//                        lg.getErrorMessage();
+//                System.out.println(actual);
 //                *< used Soft Assert for Locked user validation >*
-                sa.fail("User account is locked → stop execution");
-                sa.assertEquals(actual,"Epic sadface: Sorry, this user has been locked out.",
-                "Locked user message mismatch");
+//                sa.fail("User account is locked → stop execution");
+//                sa.assertEquals(actual,"Epic sadface: Sorry, this user has been locked out.",
+//                "Locked user message mismatch");
+
+                Assert.fail("locked user");
                 break;
         }
     }
