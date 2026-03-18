@@ -3,6 +3,7 @@ package tests;
 import base.BaseTest;
 import enums.LoginResult;
 import listeners.TestListener;
+import org.jspecify.annotations.Nullable;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
@@ -42,6 +43,8 @@ public class LoginTest extends BaseTest {
             case SUCCESS:
                 Assert.assertTrue(true,"Login success");
                 System.out.println(hg.getTagText());
+                @Nullable String url = driver.getCurrentUrl();
+                Assert.assertTrue(url.contains("https://www.saucedemo.com/inventory.html"));
                 break;
 
             case INVALID_CREDENTIALS:
@@ -63,6 +66,7 @@ public class LoginTest extends BaseTest {
                 "Locked user message mismatch");
                 break;
         }
+
     }
 }
 
