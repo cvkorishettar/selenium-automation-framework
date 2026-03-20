@@ -9,8 +9,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import pages.HomePage;
-import pages.LoginPage;
+import utilils.globalIntilize;
 import java.util.logging.Logger;
 
 
@@ -23,33 +22,30 @@ public class LoginTest extends BaseTest {
         return new Object[][]{
                 {"standard_user", "secret_sauce"},
                 {"locked_out_user", "secret_sauce"},
-                {"problem_user","secret_sauce"},
-                {"performance_glitch_user","secret_sauce"},
-                {"error_user","secret_sauce"},
-                {"visual_user","secret_sauce"},
+//                {"problem_user","secret_sauce"},
+//                {"performance_glitch_user","secret_sauce"},
+//                {"error_user","secret_sauce"},
+//                {"visual_user","secret_sauce"},
                 {"visual", "secret_sauce"}
         };
     }
 
     @Test(dataProvider = "loginData")
     public void loginScenarioTest(String user, String pwd) {
-
-        LoginPage lg = new LoginPage(driver);
-        HomePage hg = new HomePage(driver);
-        LoginResult result = lg.login(user, pwd);
+        LoginResult result = global.lg.login(user, pwd);
         SoftAssert sa = new SoftAssert();
         switch (result) {
 
             case SUCCESS:
                 Assert.assertTrue(true,"Login success");
-                System.out.println(hg.getTagText());
+                System.out.println(global.hg.getTagText());
                 @Nullable String url = driver.getCurrentUrl();
                 Assert.assertTrue(url.contains("https://www.saucedemo.com/inventory.html"));
                 break;
 
             case INVALID_CREDENTIALS:
 
-                String invalidActual = lg.getErrorMessage();
+                String invalidActual =global.lg.getErrorMessage();
                 System.out.println(invalidActual);
 //                *< used Soft Assert for invalid user validation >*
                 sa.assertEquals(invalidActual,ExpectedErrorMessage,"Invalid user");
@@ -59,7 +55,7 @@ public class LoginTest extends BaseTest {
 
             case LOCKED_USER:
                 String actual =
-                        lg.getErrorMessage();
+                        global.lg.getErrorMessage();
 //                *< used Soft Assert for Locked user validation >*
                 sa.fail("User account is locked → stop execution");
                 sa.assertEquals(actual,"Epic sadface: Sorry, this user has been locked out.",

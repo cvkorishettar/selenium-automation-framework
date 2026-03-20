@@ -85,54 +85,5 @@ public class LoginPage {
         return errorMessage.getText();
     }
 }
-//    public LoginResult login(String user, String pwd){
-//
-//        userName.clear();
-//        password.clear();
-//
-//        userName.sendKeys(user);
-//        password.sendKeys(pwd);
-//        loginBtn.click();
-//
-//        WebDriverWait wait =
-//                new WebDriverWait(driver, Duration.ofSeconds(12));
-//
-//        try {
-//
-//            wait.until(ExpectedConditions.or(
-//
-//                    ExpectedConditions.urlContains("inventory"),
-//                    ExpectedConditions.visibilityOfElementLocated(
-//                            By.xpath("//h3[@data-test='error']")
-//                    )
-//            ));
-//
-//        } catch (TimeoutException e){
-//            System.out.println("Login response slow");
-//        }
-//
-//        // ⭐ SUCCESS CASE
-//        if(driver.getCurrentUrl().contains("inventory")){
-//            return LoginResult.SUCCESS;
-//        }
-//
-//        // ⭐ ERROR CASE
-//        if(driver.findElements(
-//                By.xpath("//h3[@data-test='error']")).size() > 0){
-//
-//            String msg = driver.findElement(
-//                    By.xpath("//h3[@data-test='error']")).getText();
-//
-//            System.out.println("Actual Error: " + msg);
-//
-//            if(msg.contains("locked out")){
-//                return LoginResult.LOCKED_USER;
-//            }
-//            else{
-//                return LoginResult.INVALID_CREDENTIALS;
-//            }
-//        }
-//
-//        return LoginResult.INVALID_CREDENTIALS;
-//    }
+
 
